@@ -10,21 +10,6 @@
 
 //compile: g++ main.cpp -lpthread
 
-
-class Timer {
-public:
-    Timer() {
-        begin = clock();
-    }
-    ~Timer() {
-        auto end = clock();
-        auto elapsed_ms = (end - begin) * 1000 / CLOCKS_PER_SEC;
-        std::cout << elapsed_ms << " ms" << std::endl;
-    }
-private:
-    clock_t begin;
-};
-
 class Locker{
 public:
     virtual void lock() = 0;
